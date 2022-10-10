@@ -7,6 +7,8 @@ on:
 
 jobs:
   build:
+    env:
+      VITE_MY_NAME: ${{ secrets.MY_NAME }}
     name: Build
     runs-on: ubuntu-latest
 
@@ -24,7 +26,6 @@ jobs:
 
       - name: Build project
         env:
-          VITE_MY_NAME: ${{ secrets.MY_NAME }}
           VITE_INFO: "vite can see env"
         run: yarn run build
 
